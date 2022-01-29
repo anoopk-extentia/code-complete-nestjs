@@ -16,9 +16,9 @@ export class ItemsService {
     return item;
   }
 
-  add(name: string) {
+  add(name: string): string {
     const item = this.items.getByName(name);
-    if (item.id) return item;
+    if (item.id) return item.id;
     const id = Math.random().toString();
     this.items.add(id, name);
     return id;
