@@ -1,26 +1,32 @@
 import { Injectable } from '@nestjs/common';
-import { CreateNameDto } from './dto/create-name.dto';
-import { UpdateNameDto } from './dto/update-name.dto';
+import { Names } from './names.collection'
+import { Name } from "./entities/name.entity"
+import { EventEmitter2 } from '@nestjs/event-emitter';
+import { NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class NamesService {
-  create(createNameDto: CreateNameDto) {
-    return 'This action adds a new name';
+  constructor(private names: Names, private eventEmitter: EventEmitter2) {}
+
+  list() {
+    return this.names.list();
   }
 
-  findAll() {
-    return `This action returns all names`;
+  get(id: string): Name {
+    const name = this.names.get(id);
+    if (!name) throw new NotFoundException('Item not found');
+    return name;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} name`;
-  }
+  add(name: string): string {
+    this.eventEmitter.emit('item.inserted', name);
 
-  update(id: number, updateNameDto: UpdateNameDto) {
-    return `This action updates a #${id} name`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} name`;
+    const item = this.names.getByName(name);
+    if (item.id) 
+      return item.id;
+    
+    const id = Math.random().toString();
+    this.names.add(id, name);
+    return id;
   }
 }
