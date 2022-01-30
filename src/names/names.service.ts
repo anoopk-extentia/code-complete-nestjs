@@ -14,12 +14,12 @@ export class NamesService {
 
   get(id: string): Name {
     const name = this.names.get(id);
-    if (!name) throw new NotFoundException('Item not found');
+    if (!name) throw new NotFoundException('Name not found');
     return name;
   }
 
   add(name: string): string {
-    this.eventEmitter.emit('item.inserted', name);
+    this.eventEmitter.emit('name.inserted', name);
 
     const item = this.names.getByName(name);
     if (item.id) 
