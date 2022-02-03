@@ -15,7 +15,7 @@ export class NamesController {
   }
 
   @Post()
-  addName(@Body('name') name: string): string {
+  addName(@Body('name') name: string) {
     return this.namesService.add(name);
   }
 }

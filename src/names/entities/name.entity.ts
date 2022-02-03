@@ -1,3 +1,10 @@
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+
+@Entity({ name: 'name' })
 export class Name {
-    constructor(public id: string, public text: string) {}
+  @PrimaryGeneratedColumn()
+  id: string;
+
+  @Column({ type: 'varchar', length: 12 })
+  text: string;
 }

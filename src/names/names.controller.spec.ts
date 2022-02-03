@@ -1,51 +1,45 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Item } from '../items/item.model';
-import { ItemsController } from './names.controller';
-import { ItemsService } from './items.service';
-import { Names } from './names.collection';
+import { NamesController } from './names.controller';
+import { NamesService } from './names.service';
 
-describe('ItemsController', () => {
-  let controller: ItemsController;
-  let service: ItemsService;
-  let items: Names;
-  let item: Item;
+describe('NamesController', () => {
+  let controller: NamesController;
+  let service: NamesService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [ItemsController],
-      providers: [ItemsService, Names],
+      controllers: [NamesController],
+      providers: [NamesService],
     }).compile();
 
-    controller = module.get<ItemsController>(ItemsController);
-    service = module.get<ItemsService>(ItemsService);
-    items = module.get<Names>(Names);
-    items.add('1', 'bikes');
+    controller = module.get<NamesController>(NamesController);
+    service = module.get<NamesService>(NamesService);
   });
 
   describe('root', () => {
     it('should return a list of names', () => {
       const result = [];
       jest.spyOn(service, 'list').mockImplementation(() => result);
-      expect(controller.listItems()).toBe(result);
+      expect(controller.listNames()).toBe(result);
     });
   });
   describe('get', () => {
     it('this returns an Item', () => {
-      jest.spyOn(service, 'get').mockImplementation(() => item);
-      expect(controller.getItem('1')).toBe(item);
+      jest.spyOn(service, 'get').mockImplementation(() => name);
+      expect(controller.getName('1')).toBe(item);
     });
   });
   describe('get', () => {
     it('or exception', () => {
       jest.spyOn(service, 'get').mockImplementation(() => item);
-      expect(controller.getItem('1')).toBe(item);
+      expect(controller.getName('1')).toBe(item);
     });
   });
   describe('addItem', () => {
     it('Add an item', () => {
       const itemid = '1';
       jest.spyOn(service, 'add').mockImplementation(() => itemid);
-      expect(controller.addItem('1')).toBe(itemid);
+      expect(controller.addName('1')).toBe(itemid);
     });
   });
 });

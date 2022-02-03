@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { NamesService } from './names.service';
 import { NamesController } from './names.controller';
-import { Names } from '../names/names.collection';
+import { Name } from './entities/name.entity';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 
-
 @Module({
-  imports: [NamesModule, EventEmitterModule.forRoot()],
+  imports: [TypeOrmModule.forFeature([Name])],
   controllers: [NamesController],
-  providers: [NamesService, Names]
+  providers: [NamesService, Name, EventEmitterModule],
 })
 export class NamesModule {}

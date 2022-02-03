@@ -36,6 +36,7 @@
     "chalk": "^5.0.0",
     "dotenv": "^14.3.2",
     "has-flag": "^5.0.1",
+    "helmet": "^5.0.2",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
