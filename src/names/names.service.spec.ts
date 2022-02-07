@@ -1,18 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ItemsService } from './items.service';
-import { Names } from './names.collection';
-import { Item } from '../items/item.model';
+import { NamesService } from './names.service';
 
 describe('ItemsService', () => {
-  let service: ItemsService;
-  let items: Names;
+  let service: NamesService;
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [ItemsService, Names],
+      providers: [NamesService],
     }).compile();
-    items = module.get<Names>(Names);
-    items.add('1', 'bikes');
-    service = module.get<ItemsService>(ItemsService);
+    service = module.get<NamesService>(NamesService);
   });
 
   describe('add', () => {
@@ -21,13 +16,13 @@ describe('ItemsService', () => {
     });
   });
   describe('get', () => {
-    it('Should return item', () => {
-      expect(service.get('1')).toEqual(new Item('1', 'bikes'));
+    it('Should return name', () => {
+      expect(service.get('1')).toEqual('bikes');
     });
   });
   describe('list', () => {
     it('Should have 1 item', () => {
-      expect(service.list().length).toBe(1);
+      expect(service.list().then).toBe(1);
     });
   });
 });

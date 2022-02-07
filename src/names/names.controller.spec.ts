@@ -17,8 +17,8 @@ describe('NamesController', () => {
   });
 
   describe('root', () => {
-    it('should return a list of names', () => {
-      const result = [];
+    it('should return a list of names', async () => {
+      const result = ["bikes"];
       jest.spyOn(service, 'list').mockImplementation(() => result);
       expect(controller.listNames()).toBe(result);
     });
