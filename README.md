@@ -7,7 +7,7 @@
 
 git clone https://github.com/anoopk-extentia/code-complete-nestjs.git
 
-npm install 
+npm install // For local install mainly but also for other dev dependencies
 
 Create the following two files with correct info.
 
@@ -74,3 +74,28 @@ npm run typeorm migration:run
 
 docker-compose up --build
 
+## Use
+
+get localhost:3000
+
+get localhost:3000/names
+
+post localhost:3000/names
+
+## API Documentation
+
+get localhost:3000/api
+
+## Practices Included
+
+Open API (Swagger)
+
+Docker based setup
+
+Github Workflow (ci.yml)
+
+CI Includes (linter, unit tests, test coverage)
+
+## Practices Outstanding
+
+OWASP Cheatsheet
