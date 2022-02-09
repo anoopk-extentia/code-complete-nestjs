@@ -20,7 +20,7 @@ describe('NamesController', () => {
     it('should return a list of names', async () => {
       const result = ["bikes"];
       jest.spyOn(service, 'list').mockImplementation(() => result);
-      expect(controller.listNames()).toBe(result);
+      expect(await controller.listNames()).toBe(result);
     });
   });
   describe('get', () => {
