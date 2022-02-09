@@ -8,6 +8,7 @@ import { NameInsertedListener } from './listeners/name-inserted.listener';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { Name } from "./names/entities/name.entity";
 
 @Module({
   imports: [
@@ -22,18 +23,10 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
-
-      entities: ['dist/**/*.entity{.ts,.js}'],
-
-      migrationsTableName: 'migration',
-
-      migrations: ['src/migration/*.ts'],
-
-      cli: {
-        migrationsDir: 'src/migration',
-      },
-
-      //ssl: this.isProduction(),
+      entities: [
+        Name
+    ],
+    //ssl: true,
     }),
   ],
   controllers: [AppController],
