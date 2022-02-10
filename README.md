@@ -15,9 +15,9 @@ Correct the information within these files
 
 //Create the tables within the DB. This will need the db to be running within the docker container 
 
-npm run typeorm migration:run
-
 docker-compose up --build
+
+npm run typeorm migration:run
 
 ## Use
 
