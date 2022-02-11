@@ -19,7 +19,7 @@ import { Name } from "./names/entities/name.entity";
       type: 'postgres',
 
       host: process.env.POSTGRES_HOST,
-      port: parseInt(process.env.POSTGRES_PORT),
+      port: parseInt(process.env.POSTGRES_PORT ? process.env.POSTGRES_PORT : '3000'),
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,

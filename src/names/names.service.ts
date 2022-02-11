@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Name } from './entities/name.entity';
-//import { EventEmitter2 } from '@nestjs/event-emitter';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-//import { CreateNameDto } from './dto/create-name.dto' 
 
 @Injectable()
 export class NamesService {
@@ -15,11 +13,11 @@ export class NamesService {
     return this.namesRepository.find();
   }
 
-  get(id: string): Promise<Name> {
+  get(id: string): Promise<Name|undefined> {
     return this.namesRepository.findOne(id);
   }
 
-  create(text: string): Promise<Name> {
+  add(text: string): Promise<Name> {
     const name = new Name();
     name.text = text;
     return this.namesRepository.save(name);
