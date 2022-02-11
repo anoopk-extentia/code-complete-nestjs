@@ -80,6 +80,8 @@ CI Includes (linter, unit tests, test coverage)
 
 Strict Type Checking
 
+static application testing using [njsscan] https://github.com/ajinabraham/njsscan#github-action
+
 ## Practices Outstanding
 
 CI - Security Analysis
