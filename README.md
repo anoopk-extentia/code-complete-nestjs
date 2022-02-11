@@ -1,6 +1,6 @@
 
 <p align="center">
-  <h3 align="center">Code Complete</h3>
+  <h1 align="center">Code Complete</h1>
 
   <p align="center">
     A boot repository that has some good practices for API servers wired in.
@@ -24,8 +24,7 @@
 ## About the project
 A boot repository that has some good practices for API servers wired in. Built on [nestjs](https://nestjs.org/) and use modern Javascript powered by 
 [Typescript](https://www.typescriptlang.org/). 
-Code Coplete is a flexible framework but also giving freedom to the developer to build their own architectures 
-by providing descriptive decorators, a plugin engine, shareable modules and moder Javascript.
+To use, fork into your rep and start having fun.
 
 ### Motivation
 Main goal is making uncomplicaded creation of server-side applications, modulables, plugables, free and efortless 
@@ -79,13 +78,17 @@ Unit Tests (Controller and Service)
 
 CI Includes (linter, unit tests, test coverage)
 
+Strict Type Checking
+
 ## Practices Outstanding
 
 CI - Security Analysis
 
-CD
+CD - AWS\Azure\Heroku
 
 Integration tests
+
+Penetrationt tests
 
 OWASP Cheatsheet
 
