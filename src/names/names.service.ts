@@ -13,7 +13,7 @@ export class NamesService {
     return this.namesRepository.find();
   }
 
-  get(id: string): Promise<Name|undefined> {
+  get(id: string): Promise<Name | undefined> {
     return this.namesRepository.findOne(id);
   }
 

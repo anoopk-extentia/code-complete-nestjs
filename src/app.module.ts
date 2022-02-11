@@ -8,7 +8,7 @@ import { NameInsertedListener } from './listeners/name-inserted.listener';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { Name } from "./names/entities/name.entity";
+import { Name } from './names/entities/name.entity';
 
 @Module({
   imports: [
@@ -19,14 +19,14 @@ import { Name } from "./names/entities/name.entity";
       type: 'postgres',
 
       host: process.env.POSTGRES_HOST,
-      port: parseInt(process.env.POSTGRES_PORT ? process.env.POSTGRES_PORT : '3000'),
+      port: parseInt(
+        process.env.POSTGRES_PORT ? process.env.POSTGRES_PORT : '3002',
+      ),
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
-      entities: [
-        Name
-    ],
-    //ssl: true,
+      entities: [Name],
+      //ssl: true,
     }),
   ],
   controllers: [AppController],
