@@ -5,7 +5,7 @@ import { Name } from './entities/name.entity';
 
 describe('NamesController', () => {
   let controller: NamesController;
-  let service: NamesService;
+  //let service: NamesService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -14,7 +14,7 @@ describe('NamesController', () => {
     }).compile();
 
     controller = module.get<NamesController>(NamesController);
-    service = module.get<NamesService>(NamesService);
+    //service = module.get<NamesService>(NamesService);
   });
 
   describe('root', () => {
