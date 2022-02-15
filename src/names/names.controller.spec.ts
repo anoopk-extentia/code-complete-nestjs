@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { NamesController } from './names.controller';
 import { NamesService } from './names.service';
-import { CreateNameDto } from './dto/create-name.dto';
 
 describe('NamesController', () => {
   let controller: NamesController;
@@ -17,13 +16,7 @@ describe('NamesController', () => {
         text:'Test'
       }
     }),
-    add: jest.fn().mockImplementation((createdto: CreateNameDto) =>
-    {
-      return {
-        id:expect.any(Number),
-        ...createdto
-      }
-    }),
+    
   }
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -60,11 +53,6 @@ describe('NamesController', () => {
       });
     });
   });
-  describe('addItem', () => {
-    it('Add an item', async () => {
-      const text = 'Asim'
-      await expect(controller.addName(text)).toBeDefined();
-    });
-  });
+  
   
 });

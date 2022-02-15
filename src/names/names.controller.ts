@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { NamesService } from './names.service';
+import { Name } from './entities/name.entity';
 
 @Controller('names')
 export class NamesController {
@@ -15,7 +16,7 @@ export class NamesController {
   }
 
   @Post()
-  addName(@Body('name') name: string) {
-    return this.namesService.add(name);
+  addName(@Body() name: Name) {
+    return this.namesService.add(name.text);
   }
 }

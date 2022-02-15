@@ -88,9 +88,11 @@ CI - Security Analysis
 
 CD - AWS\Azure\Heroku
 
+Obervability via OpenTelemetry
+
 Integration tests
 
-Penetrationt tests
+Penetration tests
 
 OWASP Cheatsheet
 
