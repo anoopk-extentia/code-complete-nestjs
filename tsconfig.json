@@ -20,5 +20,6 @@
     "noImplicitReturns": true,
     "strict": true,
     "noUnusedLocals": true,
+    "strictPropertyInitialization": false
   }
 }
