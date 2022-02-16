@@ -16,7 +16,7 @@ describe('NamesService', () => {
     create: jest.fn().mockImplementation((dto)=>dto),
     save: jest.fn().mockImplementation(user=>Promise.resolve({id:1,...user})),
     find: jest.fn().mockResolvedValue(NameArray),
-    findOne: jest.fn().mockResolvedValue({text:'Asim',id:expect.any(Number)}),
+    findOne: jest.fn().mockResolvedValue({text:'Saurabh',roll:"developer",id:expect.any(Number)}),
   }
 
   beforeEach( async () => {
@@ -35,16 +35,20 @@ describe('NamesService', () => {
     expect(true).toBe(true);
   });
   it('Create Name', async () => {
-    expect(await service.add('Asim')).toEqual({
-      id:expect.any(Number),text:'Asim'
+    const dt = {text:'Saurabh', roll: "developer"} ;
+    expect(await service.add(dt)).toEqual({
+      id:expect.any(Number),
+      ...dt
     });
   });
   it('list Names', async () => {
     expect(await service.list()).toEqual(NameArray);
   });
   it('Get Names', async () => {
+    const dt = {text:'Saurabh', roll: "developer"} ;
     expect(await service.get('1')).toEqual({
-      id:expect.any(Number),text:'Asim'
+      id:expect.any(Number),
+      ...dt
     });
   });
   
