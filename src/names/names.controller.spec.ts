@@ -4,7 +4,6 @@ import { NamesService } from './names.service';
 
 describe('NamesController', () => {
   let controller: NamesController;
-  //let service: NamesService;
 
   const mockNameSerice = {
     list: jest.fn().mockResolvedValue([{ text: 'bikes' }, { text: 'Test' }]),
@@ -27,7 +26,6 @@ describe('NamesController', () => {
     }).compile();
 
     controller = module.get<NamesController>(NamesController);
-    // let service = module.get<NamesService>(NamesService);
   });
   it('should be defined', () => {
     expect(controller).toBeDefined();
@@ -42,10 +40,8 @@ describe('NamesController', () => {
 
   describe('get', () => {
     it('or exception', async () => {
-      // jest.spyOn(service, 'get').mockImplementation(() => item);
-      //expect(controller.getName('1')).toBe(item);
       const dto = { text: 'Test' };
-      await expect(controller.getName('1')).toEqual({
+      expect(controller.getName('1')).toEqual({
         id: 1,
         ...dto,
       });
