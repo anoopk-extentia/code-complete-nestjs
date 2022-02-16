@@ -9,24 +9,23 @@ import { json } from 'stream/consumers';
 describe('NamesController (e2e)', () => {
   let app: INestApplication;
 
-  let nameService = { findAll: () => ['test'] };
+  const nameService = { findAll: () => ['test'] };
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [NamesModule],
-    }).overrideProvider(getRepositoryToken(Name))
-    .useValue(nameService).compile();
+    })
+      .overrideProvider(getRepositoryToken(Name))
+      .useValue(nameService)
+      .compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
   });
 
   it(`/GET names`, () => {
-    return request(app.getHttpServer())
-      .get('/names')
-      .expect(200)
-      .expect({
-        data: nameService.findAll(),
-      });
+    return request(app.getHttpServer()).get('/names').expect(200).expect({
+      data: nameService.findAll(),
+    });
   });
 });

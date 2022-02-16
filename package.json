@@ -8,7 +8,6 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "audit": "audit",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -25,9 +24,7 @@
   },
   "pre-commit": [
     "lint",
-    "test",
-    "test:cov",
-    "audit"
+    "test"
   ],
   "dependencies": {
     "@nestjs/common": "^8.0.0",
