@@ -11,6 +11,10 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
 import { Name } from './names/entities/name.entity';
 import { User } from './users/entities/user.entity';
 import { UsersModule } from './users/users.module';
+import { TerminusModule } from '@nestjs/terminus';
+import { HealthController } from './health/health.controller';
+import { HttpModule } from '@nestjs/axios';
+
 
 @Module({
   imports: [
@@ -30,9 +34,11 @@ import { UsersModule } from './users/users.module';
       entities: [Name, User],
       //ssl: true,
     }),
+    HttpModule,
+    TerminusModule,
     UsersModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [AppService, NameInsertedListener],
 })
 export class AppModule {}
