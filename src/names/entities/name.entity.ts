@@ -10,5 +10,5 @@ export class Name {
   text!: string;
 
   @Column({ type: 'varchar', length: 10, nullable: true, default: null  })
-  roll?: string;
+  role?: string;
 }

@@ -21,7 +21,7 @@ export class NamesService {
   add(@Body() body: CreateNameDto): Promise<Name> {
     const name = new Name();
     name.text = body.text;
-    name.roll = body.roll;
+    name.role = body.role;
     return this.namesRepository.save(name);
   }
 }

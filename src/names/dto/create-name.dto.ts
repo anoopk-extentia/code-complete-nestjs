@@ -4,5 +4,5 @@ export class CreateNameDto {
     text: string;
     
     @ApiProperty({required:false})
-    roll?: string; 
+    role?: string; 
 }
