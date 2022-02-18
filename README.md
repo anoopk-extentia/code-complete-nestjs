@@ -78,15 +78,13 @@ Github Workflow (ci.yml)
 
 Unit Tests (Controller and Service)
 
-CI Includes (linter, unit tests, test coverage Snyk tests)
+CI Includes (linter, unit tests, test coverage, Snyk audit)
 
 Strict Type Checking
 
 Insecure code pattern detection via [njsscan] https://github.com/ajinabraham/njsscan#github-action
 
 ### Practices Outstanding
-
-CI - Security Analysis
 
 CD - AWS\Azure\Heroku
 
@@ -104,7 +102,7 @@ Health Checker via [terminus] https://docs.nestjs.com/recipes/terminus
 
 App Documentation via [Compodoc] https://compodoc.app/ (npx @compodoc/compodoc -p tsconfig.json -s)
 
-# Stay in Touch
+# Talk to me
 
 * Author - [Anoop Kumar](anoop.kumar@extentia.com)
 
