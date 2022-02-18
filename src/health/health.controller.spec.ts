@@ -1,11 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HealthController } from './health.controller';
 import {
-    HealthCheckService,
-    HttpHealthIndicator,
-    TypeOrmHealthIndicator,
-    MemoryHealthIndicator
-  } from '@nestjs/terminus';
+  HealthCheckService,
+  HttpHealthIndicator,
+  TypeOrmHealthIndicator,
+  MemoryHealthIndicator,
+} from '@nestjs/terminus';
 describe('HealthController', () => {
   let controller: HealthController;
 
@@ -15,20 +15,20 @@ describe('HealthController', () => {
       providers: [
         {
           provide: HealthCheckService,
-          useValue: {}
+          useValue: {},
         },
         {
           provide: HttpHealthIndicator,
-          useValue: {}
+          useValue: {},
         },
         {
           provide: TypeOrmHealthIndicator,
-          useValue: {}
+          useValue: {},
         },
         {
           provide: MemoryHealthIndicator,
-          useValue: {}
-        }
+          useValue: {},
+        },
       ],
     }).compile();
 

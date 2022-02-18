@@ -4,7 +4,7 @@ import {
   HttpHealthIndicator,
   HealthCheck,
   TypeOrmHealthIndicator,
-  MemoryHealthIndicator
+  MemoryHealthIndicator,
 } from '@nestjs/terminus';
 
 @Controller('health')
@@ -13,7 +13,7 @@ export class HealthController {
     private health: HealthCheckService,
     private http: HttpHealthIndicator,
     private db: TypeOrmHealthIndicator,
-    private memHealth: MemoryHealthIndicator
+    private memHealth: MemoryHealthIndicator,
   ) {}
 
   @Get()
@@ -27,14 +27,12 @@ export class HealthController {
   @HealthCheck()
   checkMem() {
     return this.health.check([
-      () => this.memHealth.checkHeap("memory", 150*1024*1024),
+      () => this.memHealth.checkHeap('memory', 150 * 1024 * 1024),
     ]);
   }
   @Get('/db')
   @HealthCheck()
   checkDb() {
-    return this.health.check([
-      () => this.db.pingCheck('database'),
-    ]);
+    return this.health.check([() => this.db.pingCheck('database')]);
   }
 }

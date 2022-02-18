@@ -23,7 +23,7 @@ describe('UsersController', () => {
     }),
     findbyid: jest.fn().mockImplementation((id) => {
       return {
-        id: expect.any(Number),
+        id: id,
         name: 'Test',
       };
     }),

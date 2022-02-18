@@ -9,7 +9,7 @@ describe('NamesController', () => {
     list: jest.fn().mockResolvedValue([{ text: 'bikes' }, { text: 'Test' }]),
     get: jest.fn().mockImplementation((id) => {
       return {
-        id: expect.any(Number),
+        id: id,
         text: 'Test',
       };
     }),
@@ -42,7 +42,7 @@ describe('NamesController', () => {
     it('or exception', async () => {
       const dto = { text: 'Test' };
       expect(controller.getName('1')).toEqual({
-        id: 1,
+        id: '1',
         ...dto,
       });
     });
