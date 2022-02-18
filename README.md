@@ -9,7 +9,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+# Table of Contents
 
 * [About the Project](#about-the-project)
   * [Motivation](#motivation)
@@ -21,7 +21,7 @@
 * [Stay in touch](#stay-in-touch)
 
 
-## About the project
+# About the project
 A boot repository that has some good practices for API servers wired in. Built on [nestjs](https://nestjs.org/) and use modern Javascript powered by 
 [Typescript](https://www.typescriptlang.org/). 
 To use, fork into your rep and start having fun.
@@ -36,11 +36,11 @@ architecture.
 * [Typescript](https://www.typescriptlang.org/) - Main Language
 * [typeorm](https://github.com/inversify/InversifyJS/) - Used for dependency Injection
 
-## Getting Started
+# Getting Started
 
 ### Prerequisites
 
-**Important!** Requires Docker Desktop.
+**Important!** Requires Docker Desktop for local deployments.
 
 ### Installation
 git clone https://github.com/anoopk-extentia/code-complete-nestjs.git
@@ -62,11 +62,11 @@ get localhost:3000/names
 
 post localhost:3000/names
 
-## API Documentation
+### API Documentation
 
 get localhost:3000/api
 
-## Practices Included
+### Practices Included
 
 Pre-commit hook to run linter/new tests (skip using -n with commit)
 
@@ -84,7 +84,7 @@ Strict Type Checking
 
 Insecure code pattern detection via [njsscan] https://github.com/ajinabraham/njsscan#github-action
 
-## Practices Outstanding
+### Practices Outstanding
 
 CI - Security Analysis
 
@@ -98,13 +98,13 @@ Penetration tests
 
 OWASP Cheatsheet
 
-## Addons
+### Addons
 
 Health Checker via [terminus] https://docs.nestjs.com/recipes/terminus
 
 App Documentation via [Compodoc] https://compodoc.app/ (npx @compodoc/compodoc -p tsconfig.json -s)
 
-## Stay in Touch
+# Stay in Touch
 
 * Author - [Anoop Kumar](anoop.kumar@extentia.com)
 

@@ -86,13 +86,14 @@ architecture.</p>
 <h2 id="api-documentation">API Documentation</h2>
 <p>get localhost:3000/api</p>
 <h2 id="practices-included">Practices Included</h2>
+<p>Pre-commit hook to run linter/new tests (skip using -n with commit)</p>
 <p>Open API (Swagger)</p>
-<p>Docker based setup</p>
+<p>Docker based setup for local deployments</p>
 <p>Github Workflow (ci.yml) </p>
 <p>Unit Tests (Controller and Service)</p>
-<p>CI Includes (linter, unit tests, test coverage)</p>
+<p>CI Includes (linter, unit tests, test coverage Snyk tests)</p>
 <p>Strict Type Checking</p>
-<p>static application testing using [njsscan] <a href="https://github.com/ajinabraham/njsscan#github-action">https://github.com/ajinabraham/njsscan#github-action</a></p>
+<p>Insecure code pattern detection via [njsscan] <a href="https://github.com/ajinabraham/njsscan#github-action">https://github.com/ajinabraham/njsscan#github-action</a></p>
 <h2 id="practices-outstanding">Practices Outstanding</h2>
 <p>CI - Security Analysis</p>
 <p>CD - AWS\Azure\Heroku</p>
@@ -100,6 +101,9 @@ architecture.</p>
 <p>Integration tests</p>
 <p>Penetration tests</p>
 <p>OWASP Cheatsheet</p>
+<h2 id="addons">Addons</h2>
+<p>Health Checker via [terminus] <a href="https://docs.nestjs.com/recipes/terminus">https://docs.nestjs.com/recipes/terminus</a></p>
+<p>App Documentation via [Compodoc] <a href="https://compodoc.app/">https://compodoc.app/</a> (npx @compodoc/compodoc -p tsconfig.json -s)</p>
 <h2 id="stay-in-touch">Stay in Touch</h2>
 <ul>
 <li>Author - <a href="anoop.kumar@extentia.com">Anoop Kumar</a></li>
