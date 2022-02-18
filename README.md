@@ -65,9 +65,35 @@ post localhost:3000/names
 
 get localhost:3000/api
 
+### Health Check
+
+[Database] http://localhost:3002/health/db
+
+[Service] http://localhost:3002/health
+
+[HeapMemory] http://localhost:3002/health/memory
+
+### Application Documentation
+
+npm install -g @compodoc/compodoc
+
+npx @compodoc/compodoc -p tsconfig.json -s
+
+[AppDoc] http://127.0.0.1:8080
+
+### After Installation
+
+Delete the current modules
+
+Delete all Migrations
+
+The game, as Sherlock would say, is on
+
 ### Practices Included
 
 Pre-commit hook to run linter/new tests (skip using -n with commit)
+
+Unit Tests (Controller and Service)
 
 Open API (Swagger)
 
@@ -75,11 +101,11 @@ Docker based setup for local deployments
 
 Github Workflow (ci.yml) 
 
-Unit Tests (Controller and Service)
-
 CI Includes (linter, unit tests, test coverage, Snyk audit)
 
 Strict Type Checking
+
+Data Migrations using TypeOrm
 
 Insecure code pattern detection via [njsscan] https://github.com/ajinabraham/njsscan#github-action
 

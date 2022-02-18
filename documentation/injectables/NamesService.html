@@ -110,7 +110,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/names/names.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/names/names.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -166,15 +166,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>add(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>add(body: <a href="../classes/CreateNameDto.html" target="_self">CreateNameDto</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/names/names.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/names/names.service.ts:21</a></div>
                 </td>
             </tr>
 
@@ -195,9 +195,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>text</td>
+                                    <td>body</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="../classes/CreateNameDto.html" target="_self" >CreateNameDto</a></code>
                                     </td>
 
                                     <td>
@@ -242,8 +242,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/names/names.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/names/names.service.ts:17</a></div>
                 </td>
             </tr>
 
@@ -311,8 +311,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/names/names.service.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/names/names.service.ts:13</a></div>
                 </td>
             </tr>
 
@@ -334,10 +334,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Injectable } from &#x27;@nestjs/common&#x27;;
 import { Name } from &#x27;./entities/name.entity&#x27;;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
 import { Repository } from &#x27;typeorm&#x27;;
+import { CreateNameDto } from &#x27;./dto/create-name.dto&#x27;;
 
 @Injectable()
 export class NamesService {
@@ -353,9 +354,10 @@ export class NamesService {
     return this.namesRepository.findOne(id);
   }
 
-  add(text: string): Promise&lt;Name&gt; {
+  add(@Body() body: CreateNameDto): Promise&lt;Name&gt; {
     const name &#x3D; new Name();
-    name.text &#x3D; text;
+    name.text &#x3D; body.text;
+    name.role &#x3D; body.role;
     return this.namesRepository.save(name);
   }
 }
