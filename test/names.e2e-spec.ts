@@ -4,7 +4,6 @@ import * as request from 'supertest';
 import { NamesModule } from '../src/names/names.module';
 import { Name } from '../src/names/entities/name.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { json } from 'stream/consumers';
 
 describe('NamesController (e2e)', () => {
   let app: INestApplication;
