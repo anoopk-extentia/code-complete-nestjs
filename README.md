@@ -27,8 +27,7 @@ A boot repository that has some good practices for API servers wired in. Built o
 To use, fork into your rep and start having fun.
 
 ### Motivation
-Main goal is making uncomplicaded creation of server-side applications, modulables, plugables, free and efortless 
-architecture.
+Main goal is to provide a seed repository for a nestjs web application that has some develpoment and deployment patterns wired in. Most of these patterns need no further maintainence. They are meant to keep programmers on the 'straight-n-narrow' without getting too much in their way. 
    
 ### Built With
 
