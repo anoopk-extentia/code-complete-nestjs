@@ -68,19 +68,21 @@ get localhost:3000/api
 
 ## Practices Included
 
+Pre-commit hook to run linter/new tests (skip using -n with commit)
+
 Open API (Swagger)
 
-Docker based setup
+Docker based setup for local deployments
 
 Github Workflow (ci.yml) 
 
 Unit Tests (Controller and Service)
 
-CI Includes (linter, unit tests, test coverage)
+CI Includes (linter, unit tests, test coverage Snyk tests)
 
 Strict Type Checking
 
-static application testing using [njsscan] https://github.com/ajinabraham/njsscan#github-action
+Insecure code pattern detection via [njsscan] https://github.com/ajinabraham/njsscan#github-action
 
 ## Practices Outstanding
 
@@ -95,6 +97,12 @@ Integration tests
 Penetration tests
 
 OWASP Cheatsheet
+
+## Addons
+
+Health Checker via [terminus] https://docs.nestjs.com/recipes/terminus
+
+App Documentation via [Compodoc] https://compodoc.app/ (npx @compodoc/compodoc -p tsconfig.json -s)
 
 ## Stay in Touch
 
