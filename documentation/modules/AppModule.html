@@ -176,9 +176,6 @@
                         <li class="list-group-item">
                             <a href="../controllers/AppController.html">AppController</a>
                         </li>
-                        <li class="list-group-item">
-                            <a href="../controllers/HealthController.html">HealthController</a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -214,9 +211,6 @@ import { EventEmitterModule } from &#x27;@nestjs/event-emitter&#x27;;
 import { Name } from &#x27;./names/entities/name.entity&#x27;;
 import { User } from &#x27;./users/entities/user.entity&#x27;;
 import { UsersModule } from &#x27;./users/users.module&#x27;;
-import { TerminusModule } from &#x27;@nestjs/terminus&#x27;;
-import { HealthController } from &#x27;./health/health.controller&#x27;;
-import { HttpModule } from &#x27;@nestjs/axios&#x27;;
 
 @Module({
   imports: [
@@ -236,11 +230,9 @@ import { HttpModule } from &#x27;@nestjs/axios&#x27;;
       entities: [Name, User],
       //ssl: true,
     }),
-    HttpModule,
-    TerminusModule,
     UsersModule,
   ],
-  controllers: [AppController, HealthController],
+  controllers: [AppController],
   providers: [AppService, NameInsertedListener],
 })
 export class AppModule {}
