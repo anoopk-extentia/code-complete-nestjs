@@ -19,9 +19,7 @@ describe('UsersService', () => {
       .mockResolvedValue({ name: 'Test', id: expect.any(Number) }),
     findbyid: jest
       .fn()
-      .mockImplementation((id) =>
-        Promise.resolve({ id: expect.any(Number), name: 'Test' }),
-      ),
+      .mockImplementation((id) => Promise.resolve({ id: id, name: 'Test' })),
     remove: jest
       .fn()
       .mockImplementation((user) => Promise.resolve({ id: 1, ...user })),

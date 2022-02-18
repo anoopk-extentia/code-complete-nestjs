@@ -7,6 +7,6 @@ export class NameInsertedListener {
   @OnEvent('name.inserted')
   handle(event: string) {
     this.count++;
-    console.log('Name came in ', this.count);
+    console.log('Name came in ', this.count, event);
   }
 }
