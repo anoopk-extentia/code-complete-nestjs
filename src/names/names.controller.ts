@@ -19,8 +19,8 @@ export class NamesController {
 
   @Get(':id')
   getName(@Param('id') id: string) {
-    let name = this.namesService.get(id);  
-    name.then(
+    return this.namesService.get(id);  
+    /*name.then(
       value => { 
         if(value == undefined) {
           throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
@@ -30,7 +30,7 @@ export class NamesController {
         throw new HttpException('Forbidden', HttpStatus.SERVICE_UNAVAILABLE);
       }
     );  
-    return name;
+    return name;*/
   }
 
   @Post()
