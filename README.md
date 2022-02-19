@@ -131,5 +131,5 @@ App Documentation via [Compodoc] https://compodoc.app/ (npx @compodoc/compodoc -
 
 # Talk to me
 
-* Author - [Anoop Kumar](anoop.kumar@extentia.com)
+* anoop.kumar@extentia.com
 
