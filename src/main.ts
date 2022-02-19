@@ -2,10 +2,12 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { INestApplication, VersioningType } from '@nestjs/common';
+import { HttpExceptionFilter } from './Exceptions/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableVersioning({type: VersioningType.URI, defaultVersion: '0'});
+  app.useGlobalFilters(new HttpExceptionFilter());
   await attachOpenAPIDocumentation(app);
   await app.listen(process.env.PORT ? process.env.PORT : 3000);
 }

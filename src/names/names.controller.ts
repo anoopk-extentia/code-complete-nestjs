@@ -14,8 +14,7 @@ export class NamesController {
   @Version('1')
   @Get(':id')
   getNameV1(@Param('id') id: string) {
-    console.log("Version 1 called");
-    throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+    throw new HttpException('Not implemented', HttpStatus.NOT_IMPLEMENTED);
   }
 
   @Get(':id')
