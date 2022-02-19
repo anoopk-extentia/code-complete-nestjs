@@ -105,6 +105,8 @@ CI Includes (linter, unit tests, test coverage, Snyk audit)
 
 Strict Type Checking
 
+Semantic Versioning
+
 Data Migrations using TypeOrm
 
 Insecure code pattern detection via [njsscan] https://github.com/ajinabraham/njsscan#github-action
