@@ -61,8 +61,7 @@
 <a href="https://www.typescriptlang.org/">Typescript</a>. 
 To use, fork into your rep and start having fun.</p>
 <h3 id="motivation">Motivation</h3>
-<p>Main goal is making uncomplicaded creation of server-side applications, modulables, plugables, free and efortless 
-architecture.</p>
+<p>Main goal is to provide a seed repository for a nestjs web application that has some develpoment and deployment patterns wired in. Most of these patterns need no further maintainence. They are meant to keep programmers on the &#39;straight-n-narrow&#39; without getting too much in their way. </p>
 <h3 id="built-with">Built With</h3>
 <ul>
 <li><a href="https://nestjs.com/">nestjs</a> - The web framework used</li>
@@ -85,14 +84,27 @@ architecture.</p>
 <p>post localhost:3000/names</p>
 <h3 id="api-documentation">API Documentation</h3>
 <p>get localhost:3000/api</p>
+<h3 id="health-check">Health Check</h3>
+<p>[Database] <a href="http://localhost:3002/health/db">http://localhost:3002/health/db</a></p>
+<p>[Service] <a href="http://localhost:3002/health">http://localhost:3002/health</a></p>
+<p>[HeapMemory] <a href="http://localhost:3002/health/memory">http://localhost:3002/health/memory</a></p>
+<h3 id="application-documentation">Application Documentation</h3>
+<p>npm install @compodoc</p>
+<p>npx @compodoc/compodoc -p tsconfig.json -s</p>
+<p>[AppDoc] <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></p>
+<h3 id="after-installation">After Installation</h3>
+<p>Delete the current modules</p>
+<p>Delete all Migrations</p>
+<p>The game, as Sherlock would say, is on</p>
 <h3 id="practices-included">Practices Included</h3>
 <p>Pre-commit hook to run linter/new tests (skip using -n with commit)</p>
+<p>Unit Tests (Controller and Service)</p>
 <p>Open API (Swagger)</p>
 <p>Docker based setup for local deployments</p>
 <p>Github Workflow (ci.yml) </p>
-<p>Unit Tests (Controller and Service)</p>
-<p>CI Includes (linter, unit tests, test coverage Snyk tests)</p>
+<p>CI Includes (linter, unit tests, test coverage, Snyk audit)</p>
 <p>Strict Type Checking</p>
+<p>Data Migrations using TypeOrm</p>
 <p>Insecure code pattern detection via [njsscan] <a href="https://github.com/ajinabraham/njsscan#github-action">https://github.com/ajinabraham/njsscan#github-action</a></p>
 <h3 id="practices-outstanding">Practices Outstanding</h3>
 <p>CD - AWS\Azure\Heroku</p>
@@ -103,7 +115,7 @@ architecture.</p>
 <h3 id="addons">Addons</h3>
 <p>Health Checker via [terminus] <a href="https://docs.nestjs.com/recipes/terminus">https://docs.nestjs.com/recipes/terminus</a></p>
 <p>App Documentation via [Compodoc] <a href="https://compodoc.app/">https://compodoc.app/</a> (npx @compodoc/compodoc -p tsconfig.json -s)</p>
-<h1 id="stay-in-touch">Stay in Touch</h1>
+<h1 id="talk-to-me">Talk to me</h1>
 <ul>
 <li>Author - <a href="anoop.kumar@extentia.com">Anoop Kumar</a></li>
 </ul>

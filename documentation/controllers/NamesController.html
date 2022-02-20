@@ -122,7 +122,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addName(name: <a href="../entitys/Name.html" target="_self">Name</a>)</code>
+<code>addName(body: <a href="../classes/CreateNameDto.html" target="_self">CreateNameDto</a>)</code>
                 </td>
             </tr>
 
@@ -136,8 +136,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/names/names.controller.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/names/names.controller.ts:20</a></div>
                 </td>
             </tr>
 
@@ -158,9 +158,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>name</td>
+                                    <td>body</td>
                                     <td>
-                                                <code><a href="../entitys/Name.html" target="_self" >Name</a></code>
+                                                <code><a href="../classes/CreateNameDto.html" target="_self" >CreateNameDto</a></code>
                                     </td>
 
                                     <td>
@@ -175,7 +175,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../entitys/Name.html" target="_self" >Promise&lt;Name&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -212,8 +212,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/names/names.controller.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/names/names.controller.ts:15</a></div>
                 </td>
             </tr>
 
@@ -288,8 +288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/names/names.controller.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="10"
+                            class="link-to-prism">src/names/names.controller.ts:10</a></div>
                 </td>
             </tr>
 
@@ -312,6 +312,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Get, Post, Body, Param } from &#x27;@nestjs/common&#x27;;
 import { NamesService } from &#x27;./names.service&#x27;;
 import { Name } from &#x27;./entities/name.entity&#x27;;
+import { CreateNameDto } from &#x27;./dto/create-name.dto&#x27;;
 
 @Controller(&#x27;names&#x27;)
 export class NamesController {
@@ -327,8 +328,8 @@ export class NamesController {
   }
 
   @Post()
-  addName(@Body() name: Name) {
-    return this.namesService.add(name.text);
+  addName(@Body() body: CreateNameDto): Promise&lt;Name&gt;  {
+    return this.namesService.add(body);
   }
 }
 </code></pre>
