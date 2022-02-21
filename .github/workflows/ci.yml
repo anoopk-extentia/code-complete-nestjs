@@ -45,11 +45,14 @@ jobs:
       - name: Install vi CI
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      - name: Install vi CI
+        run: npm audit
       
       - name: Lint
         run: npm run lint
+
+      - name: Build
+        run: npm run build
       
       - name: Test
         run: npm run test
