@@ -25,21 +25,21 @@ export class NamesController {
   getNameV1(@Param('id') id: string) {
     throw new HttpException('Not implemented', HttpStatus.NOT_IMPLEMENTED);
   }
-
+ 
   @Get(':id')
   getName(@Param('id') id: string) {
-    return this.namesService.get(id);
-    /*name.then(
-      value => { 
-        if(value == undefined) {
-          throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+    return this.namesService
+      .get(id)
+      .then((value) => {
+        if (value) {
+          return value;
+        } else {
+          throw new HttpException('Data Not Found', HttpStatus.NOT_FOUND);
         }
-      }, 
-      error => { 
-        throw new HttpException('Forbidden', HttpStatus.SERVICE_UNAVAILABLE);
-      }
-    );  
-    return name;*/
+      })
+      .catch(() => {
+        throw new HttpException('Data Not Found', HttpStatus.NOT_FOUND);
+      });
   }
 
   @Post()
