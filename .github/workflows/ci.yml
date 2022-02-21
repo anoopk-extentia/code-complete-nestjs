@@ -45,7 +45,7 @@ jobs:
       - name: Install vi CI
         run: npm ci
 
-      - name: Install vi CI
+      - name: Audit
         run: npm audit
       
       - name: Lint
