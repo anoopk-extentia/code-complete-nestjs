@@ -7,10 +7,12 @@ import {
   HttpException,
   HttpStatus,
   Version,
+  UseGuards,
 } from '@nestjs/common';
 import { NamesService } from './names.service';
 import { Name } from './entities/name.entity';
 import { CreateNameDto } from './dto/create-name.dto';
+import { RateLimiterGuard, RateLimit } from 'nestjs-rate-limiter'
 
 @Controller('names')
 export class NamesController {
@@ -42,7 +44,9 @@ export class NamesController {
     return name;*/
   }
 
-  @Post()
+@UseGuards(RateLimiterGuard)
+@RateLimit({ keyPrefix: 'Add name', points: 3, duration: 60, errorMessage: 'You can add a name no more than 3 times per minute' })
+@Post()
   addName(@Body() body: CreateNameDto): Promise<Name> {
     return this.namesService.add(body);
   }

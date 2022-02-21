@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { UsersModule } from './users/users.module';
 import { TerminusModule } from '@nestjs/terminus';
+import { RateLimiterModule } from 'nestjs-rate-limiter'
 import { HealthController } from './health/health.controller';
 import { HttpModule } from '@nestjs/axios';
 import { typeOrmConfigAsync } from './config/typeorm.config';
@@ -21,6 +22,7 @@ import { typeOrmConfigAsync } from './config/typeorm.config';
     HttpModule,
     TerminusModule,
     UsersModule,
+    RateLimiterModule
   ],
   controllers: [AppController, HealthController],
   providers: [AppService, NameInsertedListener],

@@ -5,7 +5,7 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "scripts": {  
+  "scripts": {
     "audit": "audit",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -48,6 +48,7 @@
     "dotenv": "^14.3.2",
     "has-flag": "^5.0.1",
     "helmet": "^5.0.2",
+    "nestjs-rate-limiter": "^3.1.0",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
