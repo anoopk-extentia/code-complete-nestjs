@@ -44,10 +44,12 @@ describe('NamesController', () => {
       // jest.spyOn(service, 'get').mockImplementation(() => item);
       //expect(controller.getName('1')).toBe(item);
       const dto = { text: 'Test' };
-      await expect(controller.getName('1')).toEqual(Promise.resolve({
-        id: 1,
-        ...dto,
-      }));
+      await expect(controller.getName('1')).toEqual(
+        Promise.resolve({
+          id: 1,
+          ...dto,
+        }),
+      );
     });
   });
 });
