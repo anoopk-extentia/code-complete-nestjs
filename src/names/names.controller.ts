@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Param, HttpException, HttpStatus, Version } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  HttpException,
+  HttpStatus,
+  Version,
+} from '@nestjs/common';
 import { NamesService } from './names.service';
 import { Name } from './entities/name.entity';
 import { CreateNameDto } from './dto/create-name.dto';
@@ -19,7 +28,7 @@ export class NamesController {
 
   @Get(':id')
   getName(@Param('id') id: string) {
-    return this.namesService.get(id);  
+    return this.namesService.get(id);
     /*name.then(
       value => { 
         if(value == undefined) {
@@ -34,7 +43,7 @@ export class NamesController {
   }
 
   @Post()
-  addName(@Body() body: CreateNameDto): Promise<Name>  {
+  addName(@Body() body: CreateNameDto): Promise<Name> {
     return this.namesService.add(body);
   }
 }
