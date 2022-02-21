@@ -23,9 +23,12 @@ export class NamesController {
   @Version('1')
   @Get(':id')
   getNameV1(@Param('id') id: string) {
-    throw new HttpException('Not implemented', HttpStatus.NOT_IMPLEMENTED);
+    throw new HttpException(
+      'Not implemented with ' + id,
+      HttpStatus.NOT_IMPLEMENTED,
+    );
   }
- 
+
   @Get(':id')
   getName(@Param('id') id: string) {
     return this.namesService

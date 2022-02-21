@@ -8,10 +8,10 @@ describe('NamesController', () => {
   const mockNameSerice = {
     list: jest.fn().mockResolvedValue([{ text: 'bikes' }, { text: 'Test' }]),
     get: jest.fn().mockImplementation((id) => {
-      return {
-        id: expect.any(Number),
+      return Promise.resolve({
+        id: id,
         text: 'Test',
-      };
+      });
     }),
   };
   beforeEach(async () => {
@@ -44,10 +44,10 @@ describe('NamesController', () => {
       // jest.spyOn(service, 'get').mockImplementation(() => item);
       //expect(controller.getName('1')).toBe(item);
       const dto = { text: 'Test' };
-      await expect(controller.getName('1')).toEqual({
+      await expect(controller.getName('1')).toEqual(Promise.resolve({
         id: 1,
         ...dto,
-      });
+      }));
     });
   });
 });
