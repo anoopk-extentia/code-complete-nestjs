@@ -3,9 +3,11 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { INestApplication, VersioningType } from '@nestjs/common';
 import { HttpExceptionFilter } from './exceptions/http-exception.filter';
+import helmet from 'helmet';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(helmet());
   app.enableVersioning({ type: VersioningType.URI, defaultVersion: '0' });
   app.useGlobalFilters(new HttpExceptionFilter());
   await attachOpenAPIDocumentation(app);
