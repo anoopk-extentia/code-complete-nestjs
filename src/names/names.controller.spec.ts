@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { NamesController } from './names.controller';
 import { NamesService } from './names.service';
+import { RateLimiterGuard, RateLimit } from 'nestjs-rate-limiter'
 
 describe('NamesController', () => {
   let controller: NamesController;
@@ -19,6 +20,14 @@ describe('NamesController', () => {
       controllers: [NamesController],
       providers: [
         {
+          provide: RateLimiterGuard,
+          useValue: {},
+        },
+        {
+            provide: RateLimit,
+            useValue: {},
+        },
+        {
           provide: NamesService,
           useValue: mockNameSerice,
         },
@@ -26,7 +35,6 @@ describe('NamesController', () => {
     }).compile();
 
     controller = module.get<NamesController>(NamesController);
-    // let service = module.get<NamesService>(NamesService);
   });
   it('should be defined', () => {
     expect(controller).toBeDefined();
