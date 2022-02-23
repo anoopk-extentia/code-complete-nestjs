@@ -1,12 +1,13 @@
 {
   "name": "code-complete",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "scripts": {  
+  "scripts": {
     "audit": "audit",
+    "bump": "npx bump",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -25,7 +26,8 @@
   },
   "pre-commit": [
     "lint",
-    "test"
+    "test",
+    "bump"
   ],
   "dependencies": {
     "@nestjs/axios": "^0.0.5",
