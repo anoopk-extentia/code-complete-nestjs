@@ -33,7 +33,7 @@ Main goal is to provide a seed repository for a nestjs web application that has 
 
 * [nestjs](https://nestjs.com/) - The web framework used
 * [Typescript](https://www.typescriptlang.org/) - Main Language
-* [typeorm](https://github.com/inversify/InversifyJS/) - Used for dependency Injection
+* [typeorm](https://github.com/inversify/InversifyJS/) - TypeORM is a JavaScript library that's capable of connecting to several database engines.
 
 # Getting Started
 
@@ -46,7 +46,18 @@ git clone https://github.com/anoopk-extentia/code-complete-nestjs.git
 
 npm install
 
-Copy .env.example to .env and ormconfig.example.json to ormconfig.json
+### Set up local environment
+
+Create file in project root called `.env` and set environment variables for DB, e.g.:
+
+        POSTGRES_HOST=postgres/localhost
+        POSTGRES_PORT=5432
+        POSTGRES_USER=postgres
+        POSTGRES_PASSWORD=<db_password>
+        POSTGRES_DATABASE=<db_name>
+        PORT=3000
+        MODE=DEV
+        RUN_MIGRATIONS=true
 
 Correct the information within these files
 
