@@ -33,7 +33,7 @@ Main goal is to provide a seed repository for a nestjs web application that has 
 
 * [nestjs](https://nestjs.com/) - The web framework used
 * [Typescript](https://www.typescriptlang.org/) - Main Language
-* [typeorm](https://github.com/inversify/InversifyJS/) - Used for dependency Injection
+* [typeorm](https://github.com/inversify/InversifyJS/) - TypeORM is a JavaScript library that's capable of connecting to several database engines.
 
 # Getting Started
 
@@ -46,8 +46,41 @@ git clone https://github.com/anoopk-extentia/code-complete-nestjs.git
 
 npm install
 
-Copy .env.example to .env and ormconfig.example.json to ormconfig.json
+### Set up local environment
 
+Create file in project root called `.env` and set environment variables for DB, e.g.:
+
+        POSTGRES_HOST=postgres/localhost
+        POSTGRES_PORT=5432
+        POSTGRES_USER=postgres
+        POSTGRES_PASSWORD=<db_password>
+        POSTGRES_DATABASE=<db_name>
+        PORT=3000
+        MODE=DEV
+        RUN_MIGRATIONS=true
+
+## Using for migration on local server `ormconfig.js`
+
+Create `ormconfig.js` in the project root (near `package.json`). It should have following content:
+
+```javascript
+
+ module.exports = {
+  type: 'postgres',
+  host: "127.0.0.1",
+  port: 5432,
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DATABASE,
+  entities: [__dirname + '/**/entities/*.entity{.ts,.js}'],
+  migrationsTableName: "migration",
+  migrations: ["src/migration/*.{ts,js}"],
+  cli: {
+  entitiesDir: "src/**/entities",
+    migrationsDir: "src/migration"
+  },
+}
+```
 Correct the information within these files
 
 docker-compose up --build
