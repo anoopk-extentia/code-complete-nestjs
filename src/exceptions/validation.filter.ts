@@ -9,7 +9,7 @@ export class ValidationFilter implements ExceptionFilter {
     return response.status(400).json({
       statusCode: 400,
       createdBy: 'ValidationFilter',
-      validationErrors: exception.validationErrors
+      validationErrors: exception.validationErrors,
     });
   }
 }

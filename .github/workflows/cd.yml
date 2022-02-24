@@ -2,7 +2,10 @@ name: push
 on: 
   push:
     branches: 
-      - '**'
+      - main
+      - staging
+      - qa
+      - dev
 
 jobs:
   njsscan:
@@ -44,20 +47,8 @@ jobs:
       - name: Install vi CI
         run: npm ci
 
-      - name: Audit
-        run: npm audit
-
-      - name: List Outdated
-        run: npm outdated
-
-      - name: Dedupe Packages
-        run: npm dedupe
-
       - name: List Packages
         run: npm ls
-
-      - name: Lint
-        run: npm run lint
 
       - name: Build
         run: npm run build
