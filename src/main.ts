@@ -25,7 +25,7 @@ async function bootstrap() {
           (err) =>
             `${err.property} has wrong value ${
               err.value
-            }. Constrained by:${JSON.stringify(err.constraints)}`,
+            }. Constrained by:${Object.values(err.constraints!).join(', ')}`,
         );
         return new ValidationException(messages);
       },
