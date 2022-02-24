@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "audit": "audit",
+    "audit": "npm audit",
     "bump": "npx bump",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -26,7 +26,7 @@
     "typeorm:migration:run": "npm run typeorm -- migration:run"
   },
   "pre-commit": [
-    "test"
+    "audit"
   ],
   "dependencies": {
     "@nestjs/axios": "^0.0.5",

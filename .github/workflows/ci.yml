@@ -47,7 +47,13 @@ jobs:
 
       - name: Audit
         run: npm audit
-      
+
+      - name: List Outdated
+        run: npm outdated
+
+      - name: Dedupe Packages
+        run: npm dedupe
+
       - name: Lint
         run: npm run lint
 
