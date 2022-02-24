@@ -54,6 +54,9 @@ jobs:
       - name: Dedupe Packages
         run: npm dedupe
 
+      - name: List Packages
+        run: npm ls
+
       - name: Lint
         run: npm run lint
 
