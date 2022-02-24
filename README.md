@@ -59,28 +59,6 @@ Create file in project root called `.env` and set environment variables for DB, 
         MODE=DEV
         RUN_MIGRATIONS=true
 
-## Using for migration on local server `ormconfig.js`
-
-Create `ormconfig.js` in the project root (near `package.json`). It should have following content:
-
-```javascript
-
- module.exports = {
-  type: 'postgres',
-  host: "127.0.0.1",
-  port: 5432,
-  username: process.env.POSTGRES_USER,
-  password: process.env.POSTGRES_PASSWORD,
-  database: process.env.POSTGRES_DATABASE,
-  entities: [__dirname + '/**/entities/*.entity{.ts,.js}'],
-  migrationsTableName: "migration",
-  migrations: ["src/migration/*.{ts,js}"],
-  cli: {
-  entitiesDir: "src/**/entities",
-    migrationsDir: "src/migration"
-  },
-}
-```
 Correct the information within these files
 
 docker-compose up --build
