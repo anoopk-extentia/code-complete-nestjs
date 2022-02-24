@@ -6,12 +6,6 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-<<<<<<< HEAD
-    "audit": "npm audit",
-    "bump": "npx bump",
-=======
-    "audit": "audit",
->>>>>>> 16377b8957ab3843ae8b2e7122680385d893463c
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
