@@ -1,8 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import { INestApplication, VersioningType , ValidationError,
-  ValidationPipe} from '@nestjs/common';
+import {
+  INestApplication,
+  VersioningType,
+  ValidationError,
+  ValidationPipe,
+} from '@nestjs/common';
 import { HttpExceptionFilter } from './exceptions/http-exception.filter';
 import helmet from 'helmet';
 import { ValidationException } from './exceptions/validation.exception';
