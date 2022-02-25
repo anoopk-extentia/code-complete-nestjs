@@ -1,8 +1,10 @@
 name: push
 on: 
   push:
-    branches: 
-      - '**'
+    branches-ignore:
+      - main
+      - dev
+      - staging
 
 jobs:
   njsscan:

@@ -24,7 +24,7 @@ describe('NamesController', () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [NamesController],
       providers: [
-          {
+        {
           provide: NamesService,
           useValue: mockNameSerice,
         },
@@ -60,13 +60,12 @@ describe('NamesController', () => {
   });
 
   it('should create a name', async () => {
-    const dto = { text: 'Test' ,role:'Test'};
-   await expect(controller.addName(dto)).toEqual({
+    const dto = { text: 'Test', role: 'Test' };
+    await expect(controller.addName(dto)).toEqual({
       id: expect.any(Number),
       text: dto.text,
       role: dto.role,
     });
     expect(mockNameSerice.add).toHaveBeenCalledWith(dto);
   });
-
 });
