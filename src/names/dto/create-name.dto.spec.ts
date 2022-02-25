@@ -28,7 +28,7 @@ describe('Create Name Dto', () => {
 
     expect(error).toBeInstanceOf(ValidationError);
     expect(errors.length).not.toBe(0);
-    expect(Object.keys(error.constraints!)).toContain('isLength');
+    expect(error.constraints).toHaveProperty('isLength');
   });
 });
 export function stringified(errors: ValidationError[]): string {
