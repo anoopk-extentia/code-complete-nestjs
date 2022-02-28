@@ -56,6 +56,8 @@
     "has-flag": "^5.0.1",
     "helmet": "^5.0.2",
     "pg": "^8.7.1",
+    "postgraphile": "^4.12.8",
+    "postgraphile-nest": "^1.0.6",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
     "supports-color": "^9.2.1",
