@@ -2,9 +2,13 @@
   "name": "code-complete",
   "version": "0.0.4",
   "description": "",
-  "author": "",
+  "author": "The Team at Extentia",
   "private": true,
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anoopk-extentia/code-complete-nestjs.git"
+  },
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

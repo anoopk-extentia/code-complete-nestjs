@@ -59,13 +59,13 @@ Create file in project root called `.env` and set environment variables for DB, 
         MODE=DEV
         RUN_MIGRATIONS=true
 
-Correct the information within these files
-
 docker-compose up --build
 
 npm run typeorm migration:run
 
 ### Run and Test
+(For local run) npm start - This needs the Postgres to be running 
+
 get localhost:3000
 
 get localhost:3000/names
