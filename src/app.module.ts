@@ -11,12 +11,12 @@ import { TerminusModule } from '@nestjs/terminus';
 import { HealthController } from './health/health.controller';
 import { HttpModule } from '@nestjs/axios';
 import { typeOrmConfigAsync } from './config/typeorm.config';
-import { PostGraphileModule } from 'postgraphile-nest'
+import { PostGraphileModule } from 'postgraphile-nest';
 
 @Module({
   imports: [
     PostGraphileModule.forRoot({
-      pgConfig: "postgres://postgres:postgres@localhost/sessions"
+      pgConfig: 'postgres://postgres:postgres@localhost/sessions',
     }),
     NamesModule,
     EventEmitterModule.forRoot(),
