@@ -11,12 +11,14 @@ import { HttpExceptionFilter } from './exceptions/http-exception.filter';
 import helmet from 'helmet';
 import { ValidationException } from './exceptions/validation.exception';
 import { ValidationFilter } from './exceptions/validation.filter';
+import { NewrelicInterceptor } from './newrelic.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(helmet());
   app.enableVersioning({ type: VersioningType.URI, defaultVersion: '0' });
   app.useGlobalFilters(new HttpExceptionFilter(), new ValidationFilter());
+  app.useGlobalInterceptors(new NewrelicInterceptor());
   app.useGlobalPipes(
     new ValidationPipe({
       skipMissingProperties: true,
