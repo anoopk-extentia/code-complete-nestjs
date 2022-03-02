@@ -48,16 +48,7 @@ npm install
 
 ### Set up local environment
 
-Create file in project root called `.env` and set environment variables for DB, e.g.:
-
-        POSTGRES_HOST=postgres/localhost
-        POSTGRES_PORT=5432
-        POSTGRES_USER=postgres
-        POSTGRES_PASSWORD=<db_password>
-        POSTGRES_DATABASE=<db_name>
-        PORT=3000
-        MODE=DEV
-        RUN_MIGRATIONS=true
+Create file in project root called `.env` and set all environment variables as specified int he .env.example file
 
 docker-compose up --build
 
