@@ -113,11 +113,11 @@ Data Migrations using TypeOrm
 
 Insecure code pattern detection via [njsscan] https://github.com/ajinabraham/njsscan#github-action
 
+Obervability via Open Relic
+
 ### Practices Outstanding
 
 CD - AWS\Azure\Heroku
-
-Obervability via OpenTelemetry
 
 Integration tests
 
