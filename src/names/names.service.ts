@@ -11,7 +11,7 @@ export class NamesService {
   ) {}
 
   list(): Promise<Name[]> {
-    return this.namesRepository.find();
+    return this.namesRepository.find({ relations: ['user'] });
   }
 
   get(id: string): Promise<Name | undefined> {
@@ -20,6 +20,7 @@ export class NamesService {
 
   add(@Body() body: CreateNameDto): Promise<Name> {
     const name = new Name();
+    name.user_id = body.user_id;
     name.text = body.text;
     name.role = body.role;
     return this.namesRepository.save(name);

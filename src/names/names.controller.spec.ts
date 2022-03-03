@@ -60,11 +60,12 @@ describe('NamesController', () => {
   });
 
   it('should create a name', async () => {
-    const dto = { text: 'Test', role: 'Test' };
+    const dto = { text: 'Test', role: 'Test', user_id: '1' };
     await expect(controller.addName(dto)).toEqual({
       id: expect.any(Number),
       text: dto.text,
       role: dto.role,
+      user_id: '1',
     });
     expect(mockNameSerice.add).toHaveBeenCalledWith(dto);
   });

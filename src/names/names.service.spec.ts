@@ -5,8 +5,8 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { NamesService } from './names.service';
 
 const NameArray = [
-  { text: 'Test', id: 1 },
-  { text: 'Test1', id: 2 },
+  { text: 'Test', id: 1, user_id: '1' },
+  { text: 'Test1', id: 2, user_id: '1' },
 ];
 
 describe('NamesService', () => {
@@ -22,6 +22,7 @@ describe('NamesService', () => {
     findOne: jest.fn().mockResolvedValue({
       text: 'Saurabh',
       role: 'developer',
+      user_id: '1',
       id: expect.any(Number),
     }),
   };
@@ -44,7 +45,7 @@ describe('NamesService', () => {
     expect(true).toBe(true);
   });
   it('Create Name', async () => {
-    const dt = { text: 'Saurabh', role: 'developer' };
+    const dt = { text: 'Saurabh', role: 'developer', user_id: '1' };
     expect(await service.add(dt)).toEqual({
       id: expect.any(Number),
       ...dt,
@@ -54,7 +55,7 @@ describe('NamesService', () => {
     expect(await service.list()).toEqual(NameArray);
   });
   it('Get Names', async () => {
-    const dt = { text: 'Saurabh', role: 'developer' };
+    const dt = { text: 'Saurabh', role: 'developer', user_id: '1' };
     expect(await service.get('1')).toEqual({
       id: expect.any(Number),
       ...dt,
