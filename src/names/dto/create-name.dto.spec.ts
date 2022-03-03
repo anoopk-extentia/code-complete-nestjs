@@ -6,6 +6,7 @@ describe('Create Name Dto', () => {
   it('requires [text] property', async () => {
     const data = {
       role: 'role',
+      user_id: '1',
     };
     const dto = plainToClass(CreateNameDto, data);
     const errors = await validate(dto);

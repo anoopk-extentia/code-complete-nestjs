@@ -10,4 +10,8 @@ export class CreateNameDto {
   @ApiProperty({ required: true })
   @IsString({ always: true })
   role: string;
+
+  @ApiProperty({ required: true })
+  @IsString({ always: true })
+  user_id: string;
 }
