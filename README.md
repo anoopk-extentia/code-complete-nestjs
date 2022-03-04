@@ -67,6 +67,20 @@ post localhost:3000/names
 
 get localhost:3000/api
 
+### Graphql
+
+The app also oublished a graphql API using Postgraphile.
+
+The URL for the API server is specified within the .env file
+
+To view the graphql API (outside the this app) run 
+npx postgraphile -c 'postgres://postgres:postgres@localhost/sessions' --watch --enhance-graphiql --dynamic-json
+
+On the browser goto http://localhost:5000/graphiql
+
+All queries should be visible and callable
+
+
 ### Health Check
 
 [Database] http://localhost:3002/health/db
