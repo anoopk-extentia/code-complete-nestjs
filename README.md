@@ -69,7 +69,7 @@ get localhost:3000/api
 
 ### Graphql
 
-The app also oublished a graphql API using Postgraphile.
+The app also publishes a graphql API using [Postgraphile] https://www.graphile.org/postgraphile/
 
 The URL for the API server is specified within the .env file
 
