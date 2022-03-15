@@ -21,6 +21,10 @@ async function bootstrap() {
   app.useGlobalInterceptors(new NewrelicInterceptor());
   app.useGlobalPipes(
     new ValidationPipe({
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
+      whitelist: true,
       skipMissingProperties: true,
       exceptionFactory: (errors: ValidationError[]) => {
         const messages = errors.map(
