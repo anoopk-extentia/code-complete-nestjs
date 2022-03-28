@@ -31,6 +31,7 @@
     "test"
   ],
   "dependencies": {
+    "@graphile-contrib/pg-simplify-inflector": "^6.1.0",
     "@nestjs/axios": "^0.0.7",
     "@nestjs/class-transformer": "^0.4.0",
     "@nestjs/class-validator": "^0.13.4",
