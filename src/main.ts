@@ -12,6 +12,7 @@ import helmet from 'helmet';
 import { ValidationException } from './exceptions/validation.exception';
 import { ValidationFilter } from './exceptions/validation.filter';
 import { NewrelicInterceptor } from './newrelic.interceptor';
+import { NlpService } from './nlp/nlp.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -38,6 +39,7 @@ async function bootstrap() {
     }),
   );
   await attachOpenAPIDocumentation(app);
+  await app.get(NlpService).init();
   await app.listen(process.env.PORT ? process.env.PORT : 3000);
 }
 

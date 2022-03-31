@@ -23,6 +23,6 @@ RUN npm install
 COPY . .
 
 COPY --from=development /usr/src/app/dist ./dist
-EXPOSE 3001
+EXPOSE ${PORT}
 
 CMD ["npm", "start"]

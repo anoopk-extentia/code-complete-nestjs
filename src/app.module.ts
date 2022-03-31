@@ -12,19 +12,21 @@ import { HealthController } from './health/health.controller';
 import { HttpModule } from '@nestjs/axios';
 import { typeOrmConfigAsync } from './config/typeorm.config';
 import { PostGraphileModule } from 'postgraphile-nest';
+import { NlpModule } from './nlp/nlp.module';
 
 @Module({
   imports: [
-    PostGraphileModule.forRoot({
-      pgConfig: 'postgres://postgres:postgres@localhost/sessions',
-    }),
     NamesModule,
     EventEmitterModule.forRoot(),
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync(typeOrmConfigAsync),
+    PostGraphileModule.forRoot({
+      pgConfig: process.env.GRAPHDB_DATABASE_URL || '',
+    }),
     HttpModule,
     TerminusModule,
     UsersModule,
+    NlpModule,
   ],
   controllers: [AppController, HealthController],
   providers: [AppService, NameInsertedListener],
