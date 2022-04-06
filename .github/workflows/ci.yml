@@ -48,6 +48,7 @@ jobs:
 
       - name: Audit
         run: npm audit
+        continue-on-error: true
 
       - name: List Outdated
         run: npm outdated
@@ -63,9 +64,6 @@ jobs:
 
       - name: Build
         run: npm run build
-      
-      - name: Test
-        run: npm run test
 
       - name: Run Coverage
         run: npm run test:cov
