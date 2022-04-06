@@ -52,7 +52,6 @@ jobs:
 
       - name: List Outdated
         run: npm outdated
-        continue-on-error: true
 
       - name: Dedupe Packages
         run: npm dedupe
